@@ -11,7 +11,9 @@
 		"lint": "eslint .",
 		"preview": "vite preview",
 		"spellcheck": "cspell --no-progress './src/**/*'",
-		"storybook": "storybook dev -p 6006"
+		"storybook": "storybook dev -p 6006",
+		"test-storybook": "vitest --project=storybook",
+		"typecheck": "tsc --noEmit --project ./tsconfig.app.json"
 	},
 	"dependencies": {
 		"@tailwindcss/vite": "4.1.11",
