@@ -3,3 +3,5 @@ build
 coverage
 public
 routeTree.gen.ts
+package-lock.json
+vitest.shims.d.ts
