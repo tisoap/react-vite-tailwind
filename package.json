@@ -9,8 +9,7 @@
 		"format": "prettier --write .",
 		"lint": "eslint .",
 		"preview": "vite preview",
-		"spellcheck": "cspell --no-progress './src/**/*'",
-		"typecheck": "tsc --noEmit --project ./tsconfig.app.json"
+		"spellcheck": "cspell --no-progress './src/**/*'"
 	},
 	"dependencies": {
 		"@tailwindcss/vite": "4.1.11",
