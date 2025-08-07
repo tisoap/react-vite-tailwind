@@ -1,18 +1,18 @@
 {
-  "version": "0.2",
-  "language": "en,lorem",
-  "allowCompoundWords": true,
-  "dictionaries": [
-    "css",
-    "en_US",
-    "filetypes",
-    "fonts",
-    "html",
-    "node",
-    "npm",
-    "softwareTerms",
-    "typescript"
-  ],
-  "words": ["iconify"],
-  "flagWords": []
+	"version": "0.2",
+	"language": "en,lorem",
+	"allowCompoundWords": true,
+	"dictionaries": [
+		"css",
+		"en_US",
+		"filetypes",
+		"fonts",
+		"html",
+		"node",
+		"npm",
+		"softwareTerms",
+		"typescript"
+	],
+	"words": ["iconify"],
+	"flagWords": []
 }
