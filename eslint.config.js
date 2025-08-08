@@ -9,7 +9,7 @@ import sonarJs from "eslint-plugin-sonarjs";
 
 export default tseslint.config(
 	[
-		globalIgnores(["dist", "routeTree.gen.ts"]),
+		globalIgnores(["dist", "storybook-static", "routeTree.gen.ts"]),
 		{
 			files: ["**/*.{ts,tsx}"],
 			extends: [
@@ -26,6 +26,7 @@ export default tseslint.config(
 				parserOptions: {
 					projectService: true,
 					tsconfigRootDir: import.meta.dirname,
+					allowDefaultProject: true,
 				},
 			},
 		},

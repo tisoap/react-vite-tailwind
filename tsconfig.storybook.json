@@ -1,0 +1,11 @@
+{
+	"extends": "./tsconfig.app.json",
+	"compilerOptions": {
+		"tsBuildInfoFile": "./node_modules/.tmp/tsconfig.storybook.tsbuildinfo",
+		"types": ["node", "vite/client"],
+		"jsx": "react-jsx",
+		"noEmit": true
+	},
+	"include": [".storybook/**/*.ts", ".storybook/**/*.tsx", "vitest.shims.d.ts"],
+	"exclude": ["node_modules", "dist"]
+}
