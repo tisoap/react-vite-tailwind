@@ -21,7 +21,9 @@ export const Default: Story = {
 			<NumberInput
 				{...args}
 				value={value}
-				onChange={(event) => setValue(Number(event.target.value))}
+				onChange={(event) => {
+					setValue(Number(event.target.value));
+				}}
 			/>
 		);
 	},

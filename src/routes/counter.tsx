@@ -53,11 +53,19 @@ function CounterPage() {
 			<div className="flex items-center justify-center gap-3">
 				<NumberInput
 					value={amount}
-					onChange={(event) => setAmount(Number(event.target.value))}
+					onChange={(event) => {
+						setAmount(Number(event.target.value));
+					}}
 					aria-label="Amount"
 				/>
 				<UIButton onClick={handleAddAmount}>Add Amount</UIButton>
-				<UIButton onClick={handleAddAsync}>Add Async</UIButton>
+				<UIButton
+					onClick={() => {
+						void handleAddAsync();
+					}}
+				>
+					Add Async
+				</UIButton>
 				<UIButton onClick={handleAddIfOdd}>Add If Odd</UIButton>
 			</div>
 		</div>
