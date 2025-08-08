@@ -6,9 +6,10 @@
 	"scripts": {
 		"build": "tsc -b && vite build",
 		"build-storybook": "storybook build",
+		"check": "npm run typecheck && npm run lint && npm run spellcheck",
 		"dev": "vite",
 		"format": "prettier --write .",
-		"lint": "eslint .",
+		"lint": "eslint . --fix",
 		"preview": "vite preview",
 		"spellcheck": "cspell --no-progress './src/**/*'",
 		"storybook": "storybook dev -p 6006",
