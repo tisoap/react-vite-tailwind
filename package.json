@@ -6,10 +6,11 @@
 	"scripts": {
 		"build": "tsc -b && vite build",
 		"build-storybook": "storybook build",
-		"check": "npm run typecheck && npm run lint && npm run spellcheck",
+		"check": "npm run typecheck && npm run lint && npm run prettier && npm run spellcheck",
 		"dev": "vite",
 		"format": "prettier --write .",
 		"lint": "eslint . --fix",
+		"prettier": "prettier --check .",
 		"preview": "vite preview",
 		"spellcheck": "cspell --no-progress './src/**/*'",
 		"storybook": "storybook dev -p 6006",
@@ -28,6 +29,7 @@
 	},
 	"devDependencies": {
 		"@chromatic-com/storybook": "4.1.0",
+		"@eslint-react/eslint-plugin": "1.52.3",
 		"@eslint/js": "9.32.0",
 		"@storybook/addon-a11y": "9.1.1",
 		"@storybook/addon-docs": "9.1.1",

@@ -1,5 +1,7 @@
+// @ts-check
 import storybook from "eslint-plugin-storybook";
 import eslint from "@eslint/js";
+import eslintReact from "@eslint-react/eslint-plugin";
 import globals from "globals";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
@@ -16,17 +18,19 @@ export default tseslint.config(
 				eslint.configs.recommended,
 				tseslint.configs.strictTypeChecked,
 				tseslint.configs.stylisticTypeChecked,
+				eslintReact.configs["recommended-type-checked"],
 				reactHooks.configs["recommended-latest"],
 				reactRefresh.configs.vite,
 				sonarJs.configs.recommended,
 			],
 			languageOptions: {
-				ecmaVersion: 2020,
+				ecmaVersion: "latest",
 				globals: globals.browser,
 				parserOptions: {
+					parser: tseslint.parser,
 					projectService: true,
 					tsconfigRootDir: import.meta.dirname,
-					allowDefaultProject: true,
+					project: ["./tsconfig.node.json", "./tsconfig.app.json"],
 				},
 			},
 		},
