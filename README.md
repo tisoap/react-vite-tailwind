@@ -1,5 +1,18 @@
 ## React + TypeScript + Vite + Tailwind Template
 
+![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
+![Tailwind_CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?logo=tailwindcss&logoColor=white)
+![TanStack_Router](https://img.shields.io/badge/TanStack_Router-ED8936)
+![Storybook](https://img.shields.io/badge/Storybook-FF4785?logo=storybook&logoColor=white)
+![Vitest](https://img.shields.io/badge/Vitest-6E9F18?logo=vitest&logoColor=white)
+![Playwright](https://img.shields.io/badge/Playwright-45BA4B?logo=playwright&logoColor=white)
+![ESLint](https://img.shields.io/badge/ESLint-3A33D1?logo=eslint&logoColor=white)
+![Prettier](https://img.shields.io/badge/Prettier-F7B93E?logo=prettier&logoColor=000)
+![cspell](https://img.shields.io/badge/CSpell-66CCFF)
+![npm](https://img.shields.io/badge/npm-CB3837?logo=npm&logoColor=white)
+
 Modern, batteries-included template for new React projects using Vite, Tailwind CSS v4, TanStack Router, Storybook, Vitest, ESLint and Prettier.
 
 ### Features
