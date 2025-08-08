@@ -13,7 +13,8 @@
 ![cspell](https://img.shields.io/badge/CSpell-66CCFF)
 ![npm](https://img.shields.io/badge/npm-CB3837?logo=npm&logoColor=white)
 
-Modern, batteries-included template for new React projects using Vite, Tailwind CSS v4, TanStack Router, Storybook, Vitest, ESLint and Prettier.
+This project was bootstrapped using
+[react-vite-tailwind](https://github.com/tisoap/react-vite-tailwind), a modern, batteries-included template for new React projects using Vite, Tailwind CSS v4, TanStack Router, Storybook, Vitest, ESLint and Prettier, made made by [Tiso Alvarez Puccinelli](https://github.com/tisoap).
 
 ### Features
 
