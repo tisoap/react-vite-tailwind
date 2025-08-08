@@ -8,6 +8,7 @@ import reactRefresh from "eslint-plugin-react-refresh";
 import tseslint from "typescript-eslint";
 import { globalIgnores } from "eslint/config";
 import sonarJs from "eslint-plugin-sonarjs";
+import prettier from "eslint-plugin-prettier/recommended";
 
 export default tseslint.config(
 	[
@@ -36,4 +37,5 @@ export default tseslint.config(
 		},
 	],
 	storybook.configs["flat/recommended"],
+	prettier,
 );
