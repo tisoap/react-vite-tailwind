@@ -20,11 +20,11 @@ This project was bootstrapped using
 
 - React 19 + Vite 7 (fast dev server, HMR)
 - TypeScript with project references and strict settings
-- Tailwind CSS v4 via `@tailwindcss/vite` (no config file required for basic use)
+- Tailwind CSS v4 via `@tailwindcss/vite`
 - Routing with TanStack Router v1 (+ Devtools in development)
 - Storybook 9 with Docs, A11y, and Vitest addon
 - Testing with Vitest (browser mode via Playwright for Storybook tests)
-- Linting with ESLint (flat config: TypeScript, React, Hooks, React Refresh, SonarJS) + Prettier
+- Linting with ESLint (flat config: TypeScript, React, Hooks, React Refresh, SonarJS, A11y) + Prettier /w TailwindCSS class sorting
 - Spell checking with cspell
 
 ---
