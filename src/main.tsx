@@ -28,6 +28,10 @@ root.render(
 
 if (process.env.NODE_ENV !== "production") {
 	void import("@axe-core/react").then((axe) => {
-		void axe.default(React, ReactDOM, 1000);
+		const timeout = 1000;
+		const configuration = undefined;
+		const context = { exclude: ".TanStackRouterDevtools" };
+
+		void axe.default(React, ReactDOM, timeout, configuration, context);
 	});
 }
