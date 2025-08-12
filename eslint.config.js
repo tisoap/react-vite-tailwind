@@ -9,6 +9,7 @@ import tseslint from "typescript-eslint";
 import { globalIgnores } from "eslint/config";
 import sonarJs from "eslint-plugin-sonarjs";
 import prettier from "eslint-plugin-prettier/recommended";
+import jsxA11y from "eslint-plugin-jsx-a11y";
 
 export default tseslint.config(
 	[
@@ -23,6 +24,7 @@ export default tseslint.config(
 				reactHooks.configs["recommended-latest"],
 				reactRefresh.configs.vite,
 				sonarJs.configs.recommended,
+				jsxA11y.flatConfigs.strict,
 			],
 			languageOptions: {
 				ecmaVersion: "latest",
