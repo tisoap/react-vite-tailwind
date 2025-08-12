@@ -1,12 +1,14 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { userEvent, within, expect } from "storybook/test";
+
+import { expect, userEvent, within } from "storybook/test";
+
 import { UIButton } from ".";
 
 const meta: Meta<typeof UIButton> = {
-	component: UIButton,
 	argTypes: {
 		onClick: { action: "clicked" },
 	},
+	component: UIButton,
 };
 
 export default meta;
@@ -30,9 +32,9 @@ export const Default: Story = {
 
 export const Square: Story = {
 	args: {
+		"aria-label": "Increment",
 		children: "+",
 		square: true,
-		"aria-label": "Increment",
 	},
 	play: async ({ canvasElement }) => {
 		const canvas = within(canvasElement);

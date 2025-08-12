@@ -1,4 +1,5 @@
 import type { ComponentProps } from "react";
+
 import { cn } from "@lib/cn";
 
 export interface UIButtonProps extends ComponentProps<"button"> {
@@ -13,7 +14,6 @@ export const UIButton = ({
 }: UIButtonProps) => {
 	return (
 		<button
-			type={type}
 			className={cn(
 				"rounded-md border border-slate-200 bg-slate-100 hover:bg-slate-200",
 				{
@@ -22,6 +22,7 @@ export const UIButton = ({
 				},
 				className,
 			)}
+			type={type}
 			{...props}
 		/>
 	);

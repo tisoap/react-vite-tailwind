@@ -1,8 +1,8 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { NumberInput } from "@components/NumberInput";
 import { PageTitle } from "@components/PageTitle";
 import { UIButton } from "@components/UIButton";
-import { NumberInput } from "@components/NumberInput";
+import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 
 export const Route = createFileRoute("/counter")({
 	component: CounterPage,
@@ -41,22 +41,22 @@ function CounterPage() {
 			<div className="h-4" />
 
 			<div className="flex items-center justify-center gap-8 mb-8">
-				<UIButton square onClick={handleDecrement} aria-label="Decrement">
+				<UIButton aria-label="Decrement" onClick={handleDecrement} square>
 					−
 				</UIButton>
 				<div className="text-6xl font-semibold tabular-nums">{count}</div>
-				<UIButton square onClick={handleIncrement} aria-label="Increment">
+				<UIButton aria-label="Increment" onClick={handleIncrement} square>
 					+
 				</UIButton>
 			</div>
 
 			<div className="flex items-center justify-center gap-3">
 				<NumberInput
-					value={amount}
+					aria-label="Amount"
 					onChange={(event) => {
 						setAmount(Number(event.target.value));
 					}}
-					aria-label="Amount"
+					value={amount}
 				/>
 				<UIButton onClick={handleAddAmount}>Add Amount</UIButton>
 				<UIButton
