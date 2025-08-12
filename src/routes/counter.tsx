@@ -36,11 +36,11 @@ function CounterPage() {
 	};
 
 	return (
-		<div className="w-full max-w-xl mx-auto text-center">
+		<div className="mx-auto w-full max-w-xl text-center">
 			<PageTitle>Counter</PageTitle>
 			<div className="h-4" />
 
-			<div className="flex items-center justify-center gap-8 mb-8">
+			<div className="mb-8 flex items-center justify-center gap-8">
 				<UIButton aria-label="Decrement" onClick={handleDecrement} square>
 					−
 				</UIButton>

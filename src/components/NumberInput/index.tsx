@@ -8,7 +8,7 @@ export const NumberInput = ({ className = "", ...props }: NumberInputProps) => {
 	return (
 		<input
 			className={cn(
-				"w-12 text-center border border-slate-200 rounded-md py-2 bg-white",
+				"w-12 rounded-md border border-slate-200 bg-white py-2 text-center",
 				className,
 			)}
 			inputMode="numeric"

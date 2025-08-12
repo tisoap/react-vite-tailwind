@@ -6,10 +6,10 @@ import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 export const Route = createRootRoute({
 	component: () => (
 		<>
-			<div className="min-h-screen bg-gray-100 text-slate-800 flex flex-col">
+			<div className="flex min-h-screen flex-col bg-gray-100 text-slate-800">
 				<Header />
 
-				<main className="flex-1 flex items-center justify-center">
+				<main className="flex flex-1 items-center justify-center">
 					<Outlet />
 				</main>
 
