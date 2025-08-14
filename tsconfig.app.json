@@ -10,10 +10,12 @@
 		/* Path aliases */
 		"baseUrl": ".",
 		"paths": {
+			"@/*": ["./*"],
 			"@components/*": ["./src/components/*"],
 			"@lib/*": ["./src/lib/*"],
 			"@routes/*": ["./src/routes/*"],
-			"@assets/*": ["./src/assets/*"]
+			"@assets/*": ["./src/assets/*"],
+			"@hooks/*": ["./src/hooks/*"]
 		},
 
 		/* Bundler mode */

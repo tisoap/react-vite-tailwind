@@ -1,6 +1,6 @@
 import type { ComponentProps } from "react";
 
-import { cn } from "@lib/cn";
+import { cn } from "@/src/lib/utils";
 
 export interface UIButtonProps extends ComponentProps<"button"> {
 	square?: boolean;
@@ -15,7 +15,7 @@ export const UIButton = ({
 	return (
 		<button
 			className={cn(
-				"rounded-md border border-slate-200 bg-slate-100 hover:bg-slate-200",
+				"border-primary/10 bg-primary-foreground hover:bg-primary/10 rounded-md border",
 				{
 					"grid h-9 w-9 place-items-center": square,
 					"px-3 py-2": !square,

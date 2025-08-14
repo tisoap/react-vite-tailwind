@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 
 export const Header = () => {
 	return (
-		<header className="border-b border-slate-200">
+		<header className="border-primary/10 border-b">
 			<nav className="mx-auto flex w-full max-w-5xl gap-4 p-2">
 				<Link className="[&.active]:font-bold" to="/">
 					Home

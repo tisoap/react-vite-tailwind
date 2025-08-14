@@ -13,6 +13,14 @@
 		"softwareTerms",
 		"typescript"
 	],
-	"words": ["Alvarez", "iconify", "nums", "Puccinelli", "sonarjs", "Tiso"],
+	"words": [
+		"Alvarez",
+		"iconify",
+		"nums",
+		"Puccinelli",
+		"shadcn",
+		"sonarjs",
+		"Tiso"
+	],
 	"flagWords": []
 }
