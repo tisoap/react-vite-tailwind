@@ -1,8 +1,9 @@
-import { NumberInput } from "@components/NumberInput";
-import { PageTitle } from "@components/PageTitle";
-import { UIButton } from "@components/UIButton";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+
+import { NumberInput } from "@/components/NumberInput";
+import { PageTitle } from "@/components/PageTitle";
+import { UIButton } from "@/components/UIButton";
 
 export const Route = createFileRoute("/counter")({
 	component: CounterPage,

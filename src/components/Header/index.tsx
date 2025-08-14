@@ -1,5 +1,7 @@
 import { Link } from "@tanstack/react-router";
 
+import { ModeToggle } from "@/components/ModeToggle";
+
 export const Header = () => {
 	return (
 		<header className="border-primary/10 border-b">
@@ -10,6 +12,7 @@ export const Header = () => {
 				<Link className="[&.active]:font-bold" to="/counter">
 					Counter
 				</Link>
+				<ModeToggle />
 			</nav>
 		</header>
 	);

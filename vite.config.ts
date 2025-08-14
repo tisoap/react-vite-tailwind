@@ -24,6 +24,11 @@ export default defineConfig({
 		react(),
 		tailwindcss(),
 	],
+	resolve: {
+		alias: {
+			"@": path.resolve(dirname, "./src"),
+		},
+	},
 	test: {
 		projects: [
 			{
