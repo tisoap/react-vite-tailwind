@@ -1,6 +1,6 @@
 import type { ComponentProps } from "react";
 
-import { cn } from "@/src/lib/utils";
+import { cn } from "@/lib/utils";
 
 export interface UIButtonProps extends ComponentProps<"button"> {
 	square?: boolean;
