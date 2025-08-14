@@ -1,3 +1,4 @@
+import { ThemeProvider } from "@components/ThemeProvider";
 import { createRouter, RouterProvider } from "@tanstack/react-router";
 import { StrictMode } from "react";
 import React from "react";
@@ -22,7 +23,9 @@ if (!rootElement) {
 const root = ReactDOM.createRoot(rootElement);
 root.render(
 	<StrictMode>
-		<RouterProvider router={router} />
+		<ThemeProvider>
+			<RouterProvider router={router} />
+		</ThemeProvider>
 	</StrictMode>,
 );
 
