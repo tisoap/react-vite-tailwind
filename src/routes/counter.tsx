@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 
-import { NumberInput } from "@/components/NumberInput";
 import { PageTitle } from "@/components/PageTitle";
-import { UIButton } from "@/components/UIButton";
+import { Button } from "@/components/UI/Button";
+import { Input } from "@/components/UI/Input";
 
 export const Route = createFileRoute("/counter")({
 	component: CounterPage,
@@ -42,32 +42,34 @@ function CounterPage() {
 			<div className="h-4" />
 
 			<div className="mb-8 flex items-center justify-center gap-8">
-				<UIButton aria-label="Decrement" onClick={handleDecrement} square>
+				<Button aria-label="Decrement" onClick={handleDecrement} size="icon">
 					−
-				</UIButton>
+				</Button>
 				<div className="text-6xl font-semibold tabular-nums">{count}</div>
-				<UIButton aria-label="Increment" onClick={handleIncrement} square>
+				<Button aria-label="Increment" onClick={handleIncrement} size="icon">
 					+
-				</UIButton>
+				</Button>
 			</div>
 
 			<div className="flex items-center justify-center gap-3">
-				<NumberInput
+				<Input
 					aria-label="Amount"
-					onChange={(event) => {
+					className="w-20"
+					onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
 						setAmount(Number(event.target.value));
 					}}
+					type="number"
 					value={amount}
 				/>
-				<UIButton onClick={handleAddAmount}>Add Amount</UIButton>
-				<UIButton
+				<Button onClick={handleAddAmount}>Add Amount</Button>
+				<Button
 					onClick={() => {
 						void handleAddAsync();
 					}}
 				>
 					Add Async
-				</UIButton>
-				<UIButton onClick={handleAddIfOdd}>Add If Odd</UIButton>
+				</Button>
+				<Button onClick={handleAddIfOdd}>Add If Odd</Button>
 			</div>
 		</div>
 	);
