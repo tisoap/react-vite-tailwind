@@ -1,0 +1,134 @@
+---
+description: React Vite Tailwind template
+globs:
+alwaysApply: true
+---
+
+Repository-specific guidance for future AI edits. Keep rules concise and actionable.
+
+## Project architecture
+
+- Source code lives in `src/`.
+- Routing is file-based using TanStack Router + Vite plugin.
+- UI is Tailwind v4 utilities + small shadcn-inspired primitives in `src/components/UI`.
+- Theme toggling via `components/ThemeProvider` with `localStorage` and root `.dark` class.
+- Aliases via Vite + TS: `@/*` → `src/*`.
+
+### Structure
+
+- `src/assets/`: static assets.
+- `src/components/`: reusable components.
+  - `UI/`: headless/styled primitives. Prefer composable components over monoliths.
+- `src/hooks/`: custom hooks.
+- `src/lib/`: small utilities. `utils.ts` exposes `cn()` (clsx + tailwind-merge).
+- `src/routes/`: route files generated/consumed by TanStack Router.
+- `src/styles/`: global CSS (`globals.css`) defines CSS variables and Tailwind layers.
+
+### Design principles
+
+- Keep components small, typed, and focused. Favor composition.
+- Co-locate stories with components where helpful.
+- Prefer readability, explicit props, and a11y-friendly markup.
+- Keep UI variants in `cva`-powered files (e.g., `buttonVariants.tsx`) and import from components.
+
+## TypeScript and React conventions
+
+- Use `interface`, not `type`, for object shapes and props.
+- Components: do not use React.FC. Type props only.
+- Prefer arrow function components: `export const Component = (props: Props) => { ... }`.
+- Exports: avoid default exports unless necessary. Prefer named exports.
+- Extend DOM elements with `ComponentProps<"tag">` where applicable.
+- All native `button` elements must include `type` when rendered as actual `<button>`.
+- Strict TS is enabled. Fix types instead of `any` or casts.
+- Avoid deep nesting; use guard clauses.
+- Keep functions small and descriptive; meaningful names over abbreviations.
+- Favor explicit handlers (e.g., `handleClick`) over inline anonymous functions when reused.
+
+## UI and styling
+
+- Tailwind v4 is enabled via `@tailwindcss/vite`. Global CSS at `src/styles/globals.css` sets CSS variables and layers.
+- Use `cn()` from `src/lib/utils.ts` to merge class names. Do not manually concat class strings.
+- For variants, use `cva` and colocate definitions in `*Variants.tsx` files (e.g., `buttonVariants.tsx`).
+- Keep components small and accept `className` for extension. Merge with `cn`.
+- Prefer data attributes (`data-variant`, `data-inset`, `data-slot`) for styling states, aligned with Radix/shadcn patterns.
+- Avoid inline styles; prefer Tailwind utilities and CSS variables set in `globals.css`.
+- When adding new primitives, follow existing patterns from `Button`, `Input`, `DropdownMenu`:
+  - Accept `className` and forward remaining props.
+  - Expose named exports only.
+  - Keep keyboard and focus styles via Tailwind utilities and `outline-*`/`focus-visible` rules.
+- Prefer adding low-level UI primitives via shadcn CLI rather than hand-rolling. Example: `npx shadcn@latest add button`
+
+## Routing (TanStack Router)
+
+- File-based routing is enabled via the Vite plugin. `routeTree.gen.ts` is generated; do not edit it.
+- Root route lives in `src/routes/__root.tsx`. Child routes in `src/routes/*` use `createFileRoute`.
+- Router is created in `src/main.tsx` and provided with `RouterProvider`.
+- Use `Link` from `@tanstack/react-router` for navigation.
+- Route files should export `export const Route = createFileRoute("/path")({ component: Component });`.
+- Keep route components small; compose UI primitives from `components/UI/` and layout elements from `components/*`.
+- Co-locate minor route-specific helpers within the route file; move shared pieces to `components/` or `lib/`.
+- Devtools are enabled in development; avoid importing them in production-only code.
+
+## Storybook and testing
+
+- Storybook 9 is configured in `.storybook/`. Add stories next to components: `ComponentName.stories.tsx`.
+- Keep stories minimal and focused on component API; include accessibility-friendly examples.
+- Use `@storybook/addon-a11y` defaults and fix violations.
+- For interaction/unit tests tied to stories, rely on `@storybook/addon-vitest` and `npm run test-storybook`.
+- Prefer testing accessible roles and labels over implementation details.
+- Use Playwright-powered browser runner for realistic interactions (already configured).
+
+## Linting, formatting, and quality gates
+
+- ESLint flat config is in `eslint.config.js` with strict TypeScript, React, hooks, React Refresh, SonarJS, and A11y configs.
+- Prettier is enforced. Tailwind classes are sorted via `prettier-plugin-tailwindcss`.
+- Run `npm run check` before committing significant changes (typecheck, lint, prettier, spellcheck).
+- Do not disable rules broadly; scope disables to the minimal line and explain why.
+- Keep `routeTree.gen.ts`, `dist/`, and `storybook-static/` ignored per ESLint config; do not add manual changes there.
+- If linter error are found, try running `npm run fix` to fix them.
+
+## Path aliases and imports
+
+- Use `@/*` alias for imports from `src/*` (Vite + TS configured).
+- Prefer absolute alias imports over deep relative paths.
+- Keep import groups ordered (external, alias, relative) and avoid unused imports.
+- Avoid default exports; use named exports to aid tree-shaking and clarity.
+- For React 19, import only what you use. Enable SWC React plugin already in Vite config.
+
+## Accessibility
+
+- axe-core runs in development (`src/main.tsx`). Fix violations it reports.
+- Ensure interactive elements have accessible names (`aria-label`, visible text, or `aria-labelledby`).
+- Use semantic HTML (buttons for actions, links for navigation). Do not use `div` for interactive controls.
+- Manage focus states clearly with `focus-visible` utilities; avoid removing outline unless replaced.
+- Ensure color contrast meets WCAG AA; variables in `globals.css` should keep sufficient contrast across themes.
+- Provide `type` on native `button` elements to avoid implicit submit.
+- Use `sr-only` text where icons alone are used.
+
+## AI task playbook
+
+### When adding or editing components
+
+- Follow TS/React rules: arrow components, named exports, `interface` for props, no React.FC.
+- For DOM extensions, use `ComponentProps<"tag">` and include required attributes (e.g., `type` for `button`).
+- Accept `className` and merge with `cn()`.
+- Add `data-slot` and other data attributes to support styling/testing when applicable.
+- If the component has variants, add a `*Variants.tsx` file using `cva`.
+
+### When changing styles
+
+- Use Tailwind utilities; avoid inline styles.
+- Reuse CSS variables from `globals.css` and dark variant rules.
+- Use `cn()` for class merging; avoid manual concatenation.
+
+### When adding routes
+
+- Create a file in `src/routes/` and export `Route` via `createFileRoute("/path")`.
+- Keep route components lean; compose primitives.
+- Update navigation if needed (e.g., `Header`).
+
+### Quality gates before finishing
+
+- Run: `npm run check` (typecheck, lint, prettier, spellcheck).
+- If stories were added/changed: run `npm run test-storybook`.
+- Verify a11y in Storybook and fix issues.
