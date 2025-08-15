@@ -43,8 +43,7 @@ function CounterPage() {
 			<section className="space-y-4 text-center">
 				<PageTitle>Interactive Counter</PageTitle>
 				<p className="text-muted-foreground mx-auto max-w-2xl text-lg leading-relaxed">
-					Explore the power of React state management with this interactive
-					counter. Try different operations and see the magic happen!
+					Counter to showcase React state management.
 				</p>
 			</section>
 
